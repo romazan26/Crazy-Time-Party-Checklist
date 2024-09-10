@@ -15,8 +15,8 @@ struct PageIntroView: View {
                     Image(page.imageUrl)
                         .resizable()
                     .scaledToFit()
+                        
  
-        
     }
 }
 

@@ -20,9 +20,18 @@ struct IntroView: View {
     var body: some View {
 
             VStack {
-              
-                ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)) {
+                HStack{
+                    Spacer()
+                    Button(action: {
+                        isPresented.toggle()
+                        isFirstStart = false
+                    }, label: {
+                        Text("SKIP")
+                            .foregroundStyle(.white)
+                            .font(.system(size: 24, weight: .heavy, design: .monospaced))
+                    })
                     
+                }.padding()
                     TabView(selection: $pageIndex,
                             content:  {
                         ForEach(pages) { page in
@@ -30,35 +39,30 @@ struct IntroView: View {
                                 .tag(page.tag)
                         }
                     })
+                    .offset(y: 30)
+                    .padding(-30)
                     .fullScreenCover(isPresented: $isPresented, content: {
-                       // MainView()
+                        Mainview()
                     })
                     .ignoresSafeArea()
                     .animation(.easeInOut, value: pageIndex)
                     .tabViewStyle(.page(indexDisplayMode: .never))
                     .indexViewStyle(.page(backgroundDisplayMode: .interactive))
                     
-                }
-                Spacer()
                 //MARK: - Navigation Button
-        
                     Button(action: {
                         pageIndex += 1
                         if pageIndex > pages.count - 1 {
                             isPresented = true
                             isFirstStart = false
                         }
-                        
                     }, label: {
                         Image(.nextButton)
                             .resizable()
                             .frame(height: scaleScreen_y(134))
                     })
                     .offset(y: scaleScreen_y(35))
-                    
                 }
-            
-        
             .background {
                 Image(.onboardingBackGroud)
                     .resizable()

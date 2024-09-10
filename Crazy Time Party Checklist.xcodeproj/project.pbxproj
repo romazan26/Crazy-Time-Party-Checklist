@@ -15,6 +15,9 @@
 		307ACBDE2C904596006E8152 /* PageIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307ACBDB2C904596006E8152 /* PageIntroView.swift */; };
 		307ACBDF2C904596006E8152 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307ACBDC2C904596006E8152 /* IntroView.swift */; };
 		307ACBE02C904596006E8152 /* PageIntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307ACBDD2C904596006E8152 /* PageIntroModel.swift */; };
+		309C47912C90D76D00438AC1 /* ButtonPressAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309C47902C90D76D00438AC1 /* ButtonPressAction.swift */; };
+		309C47932C90DA0300438AC1 /* ButtonMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309C47922C90DA0300438AC1 /* ButtonMenuView.swift */; };
+		309C47962C90E54400438AC1 /* CheckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309C47952C90E54400438AC1 /* CheckListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		307ACBDB2C904596006E8152 /* PageIntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageIntroView.swift; sourceTree = "<group>"; };
 		307ACBDC2C904596006E8152 /* IntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		307ACBDD2C904596006E8152 /* PageIntroModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageIntroModel.swift; sourceTree = "<group>"; };
+		309C47902C90D76D00438AC1 /* ButtonPressAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPressAction.swift; sourceTree = "<group>"; };
+		309C47922C90DA0300438AC1 /* ButtonMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMenuView.swift; sourceTree = "<group>"; };
+		309C47952C90E54400438AC1 /* CheckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 		307ACBC42C901AA4006E8152 /* Crazy Time Party Checklist */ = {
 			isa = PBXGroup;
 			children = (
+				309C478F2C90D75200438AC1 /* Helpers */,
 				307ACBD72C903484006E8152 /* View */,
 				307ACBC52C901AA4006E8152 /* Crazy_Time_Party_ChecklistApp.swift */,
 				307ACBC92C901AA6006E8152 /* Assets.xcassets */,
@@ -94,6 +101,7 @@
 		307ACBD72C903484006E8152 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				309C47942C90E52300438AC1 /* CheckList */,
 				307ACBDA2C904581006E8152 /* OnBoarding */,
 				307ACBD32C901B04006E8152 /* Loading */,
 				307ACBD62C903470006E8152 /* Main */,
@@ -109,6 +117,23 @@
 				307ACBDB2C904596006E8152 /* PageIntroView.swift */,
 			);
 			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		309C478F2C90D75200438AC1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				309C47902C90D76D00438AC1 /* ButtonPressAction.swift */,
+				309C47922C90DA0300438AC1 /* ButtonMenuView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		309C47942C90E52300438AC1 /* CheckList */ = {
+			isa = PBXGroup;
+			children = (
+				309C47952C90E54400438AC1 /* CheckListView.swift */,
+			);
+			path = CheckList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,7 +209,10 @@
 				307ACBD92C9034B0006E8152 /* Mainview.swift in Sources */,
 				307ACBE02C904596006E8152 /* PageIntroModel.swift in Sources */,
 				307ACBC82C901AA4006E8152 /* LoadingView.swift in Sources */,
+				309C47932C90DA0300438AC1 /* ButtonMenuView.swift in Sources */,
 				307ACBDF2C904596006E8152 /* IntroView.swift in Sources */,
+				309C47962C90E54400438AC1 /* CheckListView.swift in Sources */,
+				309C47912C90D76D00438AC1 /* ButtonPressAction.swift in Sources */,
 				307ACBDE2C904596006E8152 /* PageIntroView.swift in Sources */,
 				307ACBC62C901AA4006E8152 /* Crazy_Time_Party_ChecklistApp.swift in Sources */,
 			);
