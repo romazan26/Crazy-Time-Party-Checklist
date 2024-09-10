@@ -11,7 +11,7 @@ import SwiftUI
 struct Crazy_Time_Party_ChecklistApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoadingView()
         }
     }
 }
