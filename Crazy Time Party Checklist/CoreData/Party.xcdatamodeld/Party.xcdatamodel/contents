@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23G93" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CheckList" representedClassName="CheckList" syncable="YES" codeGenerationType="class">
+        <attribute name="nameList" optional="YES" attributeType="String"/>
+        <relationship name="task" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="cheklist" inverseEntity="Task"/>
+    </entity>
+    <entity name="Task" representedClassName="Task" syncable="YES" codeGenerationType="class">
+        <attribute name="compltd" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="textTask" optional="YES" attributeType="String"/>
+        <relationship name="cheklist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CheckList" inverseName="task" inverseEntity="CheckList"/>
+    </entity>
+</model>

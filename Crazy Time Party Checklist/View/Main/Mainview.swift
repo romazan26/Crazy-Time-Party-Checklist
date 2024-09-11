@@ -43,7 +43,7 @@ struct Mainview: View {
 
                             //MARK: Checklist button
                             NavigationLink {
-                                CheckListView()
+                                CheckListsView()
                             } label: {
                                 ButtonMenuView(image: .button2,
                                                firstImage: .button2,

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30155FDF2C917A3000EBE0AD /* backForText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30155FDE2C917A3000EBE0AD /* backForText.swift */; };
+		30155FE12C91813F00EBE0AD /* CountCheklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30155FE02C91813F00EBE0AD /* CountCheklist.swift */; };
+		30155FE42C91827000EBE0AD /* CheckListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30155FE32C91827000EBE0AD /* CheckListViewModel.swift */; };
+		30155FE82C9182D200EBE0AD /* Party.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30155FE62C9182D200EBE0AD /* Party.xcdatamodeld */; };
+		30155FED2C91847500EBE0AD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30155FEC2C91847500EBE0AD /* CoreDataManager.swift */; };
+		30155FF02C91899A00EBE0AD /* CheckListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30155FEF2C91899A00EBE0AD /* CheckListCell.swift */; };
+		30155FF22C918B5400EBE0AD /* CheckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30155FF12C918B5400EBE0AD /* CheckListView.swift */; };
+		30155FF42C918C2E00EBE0AD /* AddCheckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30155FF32C918C2E00EBE0AD /* AddCheckListView.swift */; };
+		30155FF62C9193CB00EBE0AD /* NewTaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30155FF52C9193CA00EBE0AD /* NewTaskCellView.swift */; };
 		307ACBC62C901AA4006E8152 /* Crazy_Time_Party_ChecklistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307ACBC52C901AA4006E8152 /* Crazy_Time_Party_ChecklistApp.swift */; };
 		307ACBC82C901AA4006E8152 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307ACBC72C901AA4006E8152 /* LoadingView.swift */; };
 		307ACBCA2C901AA6006E8152 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307ACBC92C901AA6006E8152 /* Assets.xcassets */; };
@@ -17,10 +26,19 @@
 		307ACBE02C904596006E8152 /* PageIntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307ACBDD2C904596006E8152 /* PageIntroModel.swift */; };
 		309C47912C90D76D00438AC1 /* ButtonPressAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309C47902C90D76D00438AC1 /* ButtonPressAction.swift */; };
 		309C47932C90DA0300438AC1 /* ButtonMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309C47922C90DA0300438AC1 /* ButtonMenuView.swift */; };
-		309C47962C90E54400438AC1 /* CheckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309C47952C90E54400438AC1 /* CheckListView.swift */; };
+		309C47962C90E54400438AC1 /* CheckListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309C47952C90E54400438AC1 /* CheckListsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30155FDE2C917A3000EBE0AD /* backForText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backForText.swift; sourceTree = "<group>"; };
+		30155FE02C91813F00EBE0AD /* CountCheklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountCheklist.swift; sourceTree = "<group>"; };
+		30155FE32C91827000EBE0AD /* CheckListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListViewModel.swift; sourceTree = "<group>"; };
+		30155FE72C9182D200EBE0AD /* Party.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Party.xcdatamodel; sourceTree = "<group>"; };
+		30155FEC2C91847500EBE0AD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		30155FEF2C91899A00EBE0AD /* CheckListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListCell.swift; sourceTree = "<group>"; };
+		30155FF12C918B5400EBE0AD /* CheckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListView.swift; sourceTree = "<group>"; };
+		30155FF32C918C2E00EBE0AD /* AddCheckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCheckListView.swift; sourceTree = "<group>"; };
+		30155FF52C9193CA00EBE0AD /* NewTaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskCellView.swift; sourceTree = "<group>"; };
 		307ACBC22C901AA4006E8152 /* Crazy Time Party Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crazy Time Party Checklist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		307ACBC52C901AA4006E8152 /* Crazy_Time_Party_ChecklistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crazy_Time_Party_ChecklistApp.swift; sourceTree = "<group>"; };
 		307ACBC72C901AA4006E8152 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -32,7 +50,7 @@
 		307ACBDD2C904596006E8152 /* PageIntroModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageIntroModel.swift; sourceTree = "<group>"; };
 		309C47902C90D76D00438AC1 /* ButtonPressAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPressAction.swift; sourceTree = "<group>"; };
 		309C47922C90DA0300438AC1 /* ButtonMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMenuView.swift; sourceTree = "<group>"; };
-		309C47952C90E54400438AC1 /* CheckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListView.swift; sourceTree = "<group>"; };
+		309C47952C90E54400438AC1 /* CheckListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +64,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30155FE22C91825B00EBE0AD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				30155FE32C91827000EBE0AD /* CheckListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		30155FE52C9182B100EBE0AD /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				30155FE62C9182D200EBE0AD /* Party.xcdatamodeld */,
+				30155FEC2C91847500EBE0AD /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		30155FEE2C91898200EBE0AD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				30155FEF2C91899A00EBE0AD /* CheckListCell.swift */,
+				30155FF52C9193CA00EBE0AD /* NewTaskCellView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		307ACBB92C901AA4006E8152 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +109,9 @@
 		307ACBC42C901AA4006E8152 /* Crazy Time Party Checklist */ = {
 			isa = PBXGroup;
 			children = (
+				30155FEE2C91898200EBE0AD /* Cells */,
+				30155FE52C9182B100EBE0AD /* CoreData */,
+				30155FE22C91825B00EBE0AD /* ViewModels */,
 				309C478F2C90D75200438AC1 /* Helpers */,
 				307ACBD72C903484006E8152 /* View */,
 				307ACBC52C901AA4006E8152 /* Crazy_Time_Party_ChecklistApp.swift */,
@@ -124,6 +171,8 @@
 			children = (
 				309C47902C90D76D00438AC1 /* ButtonPressAction.swift */,
 				309C47922C90DA0300438AC1 /* ButtonMenuView.swift */,
+				30155FDE2C917A3000EBE0AD /* backForText.swift */,
+				30155FE02C91813F00EBE0AD /* CountCheklist.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -131,7 +180,9 @@
 		309C47942C90E52300438AC1 /* CheckList */ = {
 			isa = PBXGroup;
 			children = (
-				309C47952C90E54400438AC1 /* CheckListView.swift */,
+				309C47952C90E54400438AC1 /* CheckListsView.swift */,
+				30155FF12C918B5400EBE0AD /* CheckListView.swift */,
+				30155FF32C918C2E00EBE0AD /* AddCheckListView.swift */,
 			);
 			path = CheckList;
 			sourceTree = "<group>";
@@ -207,13 +258,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				307ACBD92C9034B0006E8152 /* Mainview.swift in Sources */,
+				30155FE12C91813F00EBE0AD /* CountCheklist.swift in Sources */,
+				30155FE82C9182D200EBE0AD /* Party.xcdatamodeld in Sources */,
+				30155FF22C918B5400EBE0AD /* CheckListView.swift in Sources */,
 				307ACBE02C904596006E8152 /* PageIntroModel.swift in Sources */,
 				307ACBC82C901AA4006E8152 /* LoadingView.swift in Sources */,
 				309C47932C90DA0300438AC1 /* ButtonMenuView.swift in Sources */,
 				307ACBDF2C904596006E8152 /* IntroView.swift in Sources */,
-				309C47962C90E54400438AC1 /* CheckListView.swift in Sources */,
+				30155FF62C9193CB00EBE0AD /* NewTaskCellView.swift in Sources */,
+				30155FDF2C917A3000EBE0AD /* backForText.swift in Sources */,
+				309C47962C90E54400438AC1 /* CheckListsView.swift in Sources */,
 				309C47912C90D76D00438AC1 /* ButtonPressAction.swift in Sources */,
+				30155FE42C91827000EBE0AD /* CheckListViewModel.swift in Sources */,
+				30155FF02C91899A00EBE0AD /* CheckListCell.swift in Sources */,
 				307ACBDE2C904596006E8152 /* PageIntroView.swift in Sources */,
+				30155FF42C918C2E00EBE0AD /* AddCheckListView.swift in Sources */,
+				30155FED2C91847500EBE0AD /* CoreDataManager.swift in Sources */,
 				307ACBC62C901AA4006E8152 /* Crazy_Time_Party_ChecklistApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +488,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		30155FE62C9182D200EBE0AD /* Party.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				30155FE72C9182D200EBE0AD /* Party.xcdatamodel */,
+			);
+			currentVersion = 30155FE72C9182D200EBE0AD /* Party.xcdatamodel */;
+			name = Party.xcdatamodeld;
+			path = "/Users/roman/Downloads/XcodeProgramm/2 comand/Crazy Time Party Checklist/Crazy Time Party Checklist/CoreData/Party.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 307ACBBA2C901AA4006E8152 /* Project object */;
 }
