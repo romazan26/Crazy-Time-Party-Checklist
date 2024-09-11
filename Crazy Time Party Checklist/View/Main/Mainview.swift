@@ -35,35 +35,26 @@ struct Mainview: View {
                             NavigationLink {
                                 Text("spin")
                             } label: {
-                                ButtonMenuView(image: .button1,
-                                               firstImage: .button1,
-                                               secondImage: .button12,
-                                               text: "SPIN THE WHEEL")
+                                CustomButtonView(image: .button1, text: "SPIN THE WHEEL")
                             }
 
                             //MARK: Checklist button
                             NavigationLink {
                                 CheckListsView()
                             } label: {
-                                ButtonMenuView(image: .button2,
-                                               firstImage: .button2,
-                                               secondImage: .button22,
-                                               text: "CHECKLIST")
+                                CustomButtonView(image: .button2, text: "CHECKLISTS")
                             }
                             
                             //MARK: Training button
                             NavigationLink {
                                 Text("Trai")
                             } label: {
-                                ButtonMenuView(image: .button3,
-                                               firstImage: .button3,
-                                               secondImage: .button32,
-                                               text: "TRAINING")
+                                CustomButtonView(image: .button3, text: "TRAINING")
                             }
 
                             //MARK: Setting button
                             NavigationLink {
-                                Text("Set")
+                                SettingsView()
                             } label: {
                                 Image(.setting)
                                     .resizable()
@@ -83,5 +74,20 @@ struct Mainview: View {
 #Preview {
     NavigationView {
         Mainview()
+    }
+}
+
+struct CustomButtonView: View {
+    var image: ImageResource
+    var text: String
+    var body: some View {
+        ZStack{
+            Image(image)
+                .resizable()
+                .frame(width: scaleScreen_x(264), height: scaleScreen_y(72))
+            Text(text)
+                .foregroundStyle(.white)
+                .font(.system(size: 24, weight: .heavy, design: .monospaced))
+        }
     }
 }

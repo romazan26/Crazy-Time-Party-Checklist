@@ -19,7 +19,7 @@ struct BackForButton: View {
                     RoundedRectangle(cornerRadius: 24)
                         .stroke(.white, lineWidth: 2.0)
                 }
-                .frame( height: height)
+                .frame( height: scaleScreen_y(height) )
             .frame(maxWidth: .infinity)
             Text(text)
                 .foregroundStyle(.white)

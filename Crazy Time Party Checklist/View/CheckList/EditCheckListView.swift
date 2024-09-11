@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditCheckListView: View {
-    
+    @State private var isPresentAlert = false
     @StateObject var vm: CheckListViewModel
     let checkList: CheckList
     
@@ -79,22 +79,47 @@ struct EditCheckListView: View {
                 Spacer()
                 
                 //MARK: - Save button
-                Button(action: {
-                    vm.editCheckList(checkList: checkList)
-                    vm.isPresentEditCheckList.toggle()
-                }, label: {
-                    Text("Save")
-                        .foregroundStyle(.white)
-                        .font(.system(size: 17))
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background {
-                            Color.pinkbutton.cornerRadius(12)
-                        }
-                    
+                HStack {
+                    Button(action: {
+                        isPresentAlert.toggle()
+                    }, label: {
+                        Text("Delete")
+                            .foregroundStyle(.white)
+                            .font(.system(size: 17))
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background {
+                                Color.white.opacity(0.05).cornerRadius(12)
+                            }
+                        
+                    })
+                    Button(action: {
+                        vm.editCheckList(checkList: checkList)
+                        vm.isPresentEditCheckList.toggle()
+                    }, label: {
+                        Text("Save")
+                            .foregroundStyle(.white)
+                            .font(.system(size: 17))
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background {
+                                Color.pinkbutton.cornerRadius(12)
+                            }
+                        
                 })
+                }
             }.padding()
+                .alert(isPresented: $isPresentAlert, content: {
+                    Alert(title: Text("Delete"),
+                          message: Text("Are you sure you want to delete the checklist?"),
+                          primaryButton: .default(Text("Delete"), action: {
+                        vm.deleteCheckList(checkList: checkList)
+                        vm.isPresentEditCheckList.toggle()
+                    }),
+                          secondaryButton: .cancel())
+                })
         }
+        
         .onAppear(perform: {
             vm.fillData(checkList: checkList)
         })

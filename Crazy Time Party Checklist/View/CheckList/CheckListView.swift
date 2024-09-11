@@ -11,6 +11,7 @@ struct CheckListView: View {
     let checkList: CheckList
     @Environment(\.dismiss) var dismiss
     @ObservedObject var vm: CheckListViewModel
+    @State private var isPresentAlert = false
     var body: some View {
         ZStack {
             Image(.checkListBackGround)
@@ -81,7 +82,7 @@ struct CheckListView: View {
                 HStack{
                     //MARK: Delete button
                     Button {
-                        vm.deleteCheckList(checkList: checkList)
+                        isPresentAlert.toggle()
                     } label: {
                         BackForButton(text: "DELETE")
                     }
@@ -94,6 +95,14 @@ struct CheckListView: View {
 
                 }
             }
+            .alert(isPresented: $isPresentAlert, content: {
+                Alert(title: Text("Delete"),
+                      message: Text("Are you sure you want to delete the checklist?"),
+                      primaryButton: .default(Text("Delete"), action: {
+                    vm.deleteCheckList(checkList: checkList)
+                }),
+                      secondaryButton: .cancel())
+            })
             .sheet(isPresented: $vm.isPresentEditCheckList, content: {
                 EditCheckListView(vm: vm, checkList: checkList)
             })

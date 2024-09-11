@@ -10,6 +10,7 @@ import SwiftUI
 struct CheckListsView: View {
     
     @ObservedObject var vm = CheckListViewModel()
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
@@ -32,10 +33,14 @@ struct CheckListsView: View {
                     Image(.setting)
                         .resizable()
                         .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
-                    //MARK: List button
-                    Image(.list)
-                        .resizable()
-                        .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
+                    //MARK: Menu button
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(.list)
+                            .resizable()
+                            .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
+                    }
                 }
                 
                 //MARK: - Count cheklist
@@ -70,7 +75,6 @@ struct CheckListsView: View {
                             .font(.system(size: 24, weight: .heavy))
                     }
                 }
-
             }
             .padding()
             .navigationBarBackButtonHidden()

@@ -13,6 +13,7 @@ struct ButtonMenuView: View {
     var firstImage: ImageResource
     var secondImage: ImageResource
     var text = ""
+    @State var action: () -> Void
     
     var body: some View {
         ZStack{
@@ -23,21 +24,25 @@ struct ButtonMenuView: View {
                 .foregroundStyle(.white)
                 .font(.system(size: 24, weight: .heavy, design: .monospaced))
         }
-//        .pressEvents {
-//            withAnimation(.bouncy(duration: 0.2)) {
-//                image = secondImage
-//            }
-//            
-//        } onRelease: {
-//            withAnimation {
-//                image = firstImage
-//            }
-//            
-//        }
+        .pressEvents {
+            withAnimation(.bouncy(duration: 0.2)) {
+                image = secondImage
+            }
+            
+        } onRelease: {
+            withAnimation {
+                image = firstImage
+            }
+            action()
+        }
 
     }
 }
 
 #Preview {
-    ButtonMenuView(image: .button1, firstImage: .button1, secondImage: .button12, text: "TRAINING")
+    ButtonMenuView(image: .button1,
+                   firstImage: .button1,
+                   secondImage: .button12,
+                   text: "TRAINING",
+                   action: {})
 }
