@@ -1,5 +1,5 @@
 //
-//  AddCheckListView.swift
+//  EditCheckListView.swift
 //  Crazy Time Party Checklist
 //
 //  Created by Роман on 11.09.2024.
@@ -7,14 +7,17 @@
 
 import SwiftUI
 
-struct AddCheckListView: View {
+struct EditCheckListView: View {
+    
     @StateObject var vm: CheckListViewModel
+    let checkList: CheckList
+    
     var body: some View {
         ZStack {
             Color.perpuleApp.ignoresSafeArea()
             VStack(spacing: 20) {
                 //MARK: - Title view
-                Text("Add a checklist")
+                Text("Edit the checklist")
                     .foregroundStyle(.white)
                     .font(.system(size: 17, weight: .bold))
                 
@@ -77,8 +80,8 @@ struct AddCheckListView: View {
                 
                 //MARK: - Save button
                 Button(action: {
-                    vm.addCheckList()
-                    vm.isPresentAddCheckList.toggle()
+                    vm.editCheckList(checkList: checkList)
+                    vm.isPresentEditCheckList.toggle()
                 }, label: {
                     Text("Save")
                         .foregroundStyle(.white)
@@ -92,9 +95,12 @@ struct AddCheckListView: View {
                 })
             }.padding()
         }
+        .onAppear(perform: {
+            vm.fillData(checkList: checkList)
+        })
     }
 }
 
 #Preview {
-    AddCheckListView(vm: CheckListViewModel())
+    EditCheckListView(vm: CheckListViewModel(), checkList: CheckList())
 }

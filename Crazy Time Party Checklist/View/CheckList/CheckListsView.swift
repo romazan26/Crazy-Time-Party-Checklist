@@ -39,7 +39,7 @@ struct CheckListsView: View {
                 }
                 
                 //MARK: - Count cheklist
-                CountCheklist(count: 0)
+                CountCheklist(count: vm.checkLists.count)
                 
                 //MARK: - CheckLists List
                 if vm.checkLists.isEmpty{
@@ -50,7 +50,7 @@ struct CheckListsView: View {
                     ScrollView {
                         ForEach(vm.checkLists) { checkList in
                             NavigationLink {
-                                CheckListView(checkList: checkList)
+                                CheckListView(checkList: checkList, vm: vm)
                             } label: {
                                 CheckListCell(checkList: checkList)
                             }

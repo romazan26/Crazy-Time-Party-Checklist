@@ -15,6 +15,7 @@ struct NewTaskCellView: View {
                 Text("Text")
                     .foregroundStyle(.white.opacity(0.2))
             }
+            .foregroundStyle(.white)
             .padding()
             .background {
                 Color.white.opacity(0.1).cornerRadius(12)
