@@ -107,7 +107,6 @@ struct SpinView: View {
                                     .tag(i)
                             }
                         })
-                        
                         .animation(.easeInOut, value: vm.pageIndex)
                         .tabViewStyle(.page(indexDisplayMode: .never))
                         .indexViewStyle(.page(backgroundDisplayMode: .interactive))
@@ -145,7 +144,7 @@ struct SpinView: View {
                                 BackForButton(text: "EDIT")
                             }
                             NavigationLink {
-                                StartSpinView()
+                                StartSpinView( vm: vm, spin: vm.spinsFortune[vm.pageIndex])
                             } label: {
                                 BackForButton(text: "START")
                             }
@@ -168,5 +167,7 @@ struct SpinView: View {
 }
 
 #Preview {
-    SpinView()
+    NavigationView {
+        SpinView()
+    }
 }

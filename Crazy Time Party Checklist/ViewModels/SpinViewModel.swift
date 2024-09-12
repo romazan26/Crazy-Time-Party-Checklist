@@ -30,9 +30,23 @@ final class SpinViewModel: ObservableObject{
     @Published var simpleTasks: [String] = []
     @Published var countTask = 0
     
+    @Published var simpleDegrees: Double = 0
+    
     init(){
         getSpins()
         getTasks()
+    }
+    
+    //MARK: - Spining wheel
+    func spining(){
+        if simpleDegrees != 0{
+            simpleDegrees = 0
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: DispatchWorkItem(block: { [self] in
+                simpleDegrees = Double.random(in: 360...720)
+            }))
+        }else {
+            simpleDegrees = Double.random(in: 360...720)
+        }
     }
     
     //MARK: - Fill data checklist
