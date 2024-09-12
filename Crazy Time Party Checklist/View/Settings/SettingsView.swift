@@ -80,9 +80,10 @@ struct SettingsView: View {
                     
                     
                 }
+                
                 Button(action: {
-                    //dismiss()
-                    SoundManager.instance.playSound(sound: .backMenu)
+                    dismiss()
+                    
                 }, label: {
                     BackForButton(text: "SAVE")
                 })

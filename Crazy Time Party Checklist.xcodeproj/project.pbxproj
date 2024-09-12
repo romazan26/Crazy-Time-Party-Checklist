@@ -31,6 +31,16 @@
 		301560132C92277A00EBE0AD /* task.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3015600E2C92277A00EBE0AD /* task.mp3 */; };
 		301560142C92277A00EBE0AD /* backMenu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3015600F2C92277A00EBE0AD /* backMenu.mp3 */; };
 		301560162C9227AD00EBE0AD /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301560152C9227AD00EBE0AD /* SoundManager.swift */; };
+		301560192C92BF6200EBE0AD /* SpinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301560182C92BF6200EBE0AD /* SpinView.swift */; };
+		3015601B2C92C0E400EBE0AD /* SpinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3015601A2C92C0E400EBE0AD /* SpinViewModel.swift */; };
+		3015601D2C92C24200EBE0AD /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3015601C2C92C24200EBE0AD /* UIImageTransformer.swift */; };
+		3015601F2C92C36F00EBE0AD /* SpinFortune.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3015601E2C92C36F00EBE0AD /* SpinFortune.swift */; };
+		301560212C92C56A00EBE0AD /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301560202C92C56A00EBE0AD /* Enums.swift */; };
+		301560232C92C95E00EBE0AD /* SpinRotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301560222C92C95E00EBE0AD /* SpinRotationView.swift */; };
+		301560252C93169E00EBE0AD /* CreateSpinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301560242C93169E00EBE0AD /* CreateSpinView.swift */; };
+		301560272C93451300EBE0AD /* PageSpinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301560262C93451200EBE0AD /* PageSpinView.swift */; };
+		301560292C93615900EBE0AD /* EditSpinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301560282C93615900EBE0AD /* EditSpinView.swift */; };
+		3015602B2C9366E700EBE0AD /* StartSpinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3015602A2C9366E700EBE0AD /* StartSpinView.swift */; };
 		307ACBC62C901AA4006E8152 /* Crazy_Time_Party_ChecklistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307ACBC52C901AA4006E8152 /* Crazy_Time_Party_ChecklistApp.swift */; };
 		307ACBC82C901AA4006E8152 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307ACBC72C901AA4006E8152 /* LoadingView.swift */; };
 		307ACBCA2C901AA6006E8152 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307ACBC92C901AA6006E8152 /* Assets.xcassets */; };
@@ -69,6 +79,16 @@
 		3015600E2C92277A00EBE0AD /* task.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = task.mp3; sourceTree = "<group>"; };
 		3015600F2C92277A00EBE0AD /* backMenu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backMenu.mp3; sourceTree = "<group>"; };
 		301560152C9227AD00EBE0AD /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		301560182C92BF6200EBE0AD /* SpinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinView.swift; sourceTree = "<group>"; };
+		3015601A2C92C0E400EBE0AD /* SpinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinViewModel.swift; sourceTree = "<group>"; };
+		3015601C2C92C24200EBE0AD /* UIImageTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
+		3015601E2C92C36F00EBE0AD /* SpinFortune.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinFortune.swift; sourceTree = "<group>"; };
+		301560202C92C56A00EBE0AD /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		301560222C92C95E00EBE0AD /* SpinRotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinRotationView.swift; sourceTree = "<group>"; };
+		301560242C93169E00EBE0AD /* CreateSpinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSpinView.swift; sourceTree = "<group>"; };
+		301560262C93451200EBE0AD /* PageSpinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSpinView.swift; sourceTree = "<group>"; };
+		301560282C93615900EBE0AD /* EditSpinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSpinView.swift; sourceTree = "<group>"; };
+		3015602A2C9366E700EBE0AD /* StartSpinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSpinView.swift; sourceTree = "<group>"; };
 		307ACBC22C901AA4006E8152 /* Crazy Time Party Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crazy Time Party Checklist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		307ACBC52C901AA4006E8152 /* Crazy_Time_Party_ChecklistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crazy_Time_Party_ChecklistApp.swift; sourceTree = "<group>"; };
 		307ACBC72C901AA4006E8152 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -99,6 +119,8 @@
 			children = (
 				30155FE32C91827000EBE0AD /* CheckListViewModel.swift */,
 				301560062C921A3700EBE0AD /* SettingViewModel.swift */,
+				3015601A2C92C0E400EBE0AD /* SpinViewModel.swift */,
+				301560202C92C56A00EBE0AD /* Enums.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -106,8 +128,10 @@
 		30155FE52C9182B100EBE0AD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				3015601C2C92C24200EBE0AD /* UIImageTransformer.swift */,
 				30155FE62C9182D200EBE0AD /* Party.xcdatamodeld */,
 				30155FEC2C91847500EBE0AD /* CoreDataManager.swift */,
+				3015601E2C92C36F00EBE0AD /* SpinFortune.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -143,6 +167,18 @@
 				301560152C9227AD00EBE0AD /* SoundManager.swift */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		301560172C92BEEC00EBE0AD /* Spin */ = {
+			isa = PBXGroup;
+			children = (
+				301560182C92BF6200EBE0AD /* SpinView.swift */,
+				301560242C93169E00EBE0AD /* CreateSpinView.swift */,
+				301560262C93451200EBE0AD /* PageSpinView.swift */,
+				301560282C93615900EBE0AD /* EditSpinView.swift */,
+				3015602A2C9366E700EBE0AD /* StartSpinView.swift */,
+			);
+			path = Spin;
 			sourceTree = "<group>";
 		};
 		307ACBB92C901AA4006E8152 = {
@@ -204,6 +240,7 @@
 		307ACBD72C903484006E8152 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				301560172C92BEEC00EBE0AD /* Spin */,
 				30155FFD2C920E6600EBE0AD /* Settings */,
 				309C47942C90E52300438AC1 /* CheckList */,
 				307ACBDA2C904581006E8152 /* OnBoarding */,
@@ -233,6 +270,7 @@
 				30155FE02C91813F00EBE0AD /* CountCheklist.swift */,
 				30155FF72C91AE0000EBE0AD /* BackForButton.swift */,
 				301560082C921CCA00EBE0AD /* SliderButtomSetting.swift */,
+				301560222C92C95E00EBE0AD /* SpinRotationView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -323,31 +361,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3015601B2C92C0E400EBE0AD /* SpinViewModel.swift in Sources */,
 				301560052C921A0800EBE0AD /* SwiftUISlider.swift in Sources */,
 				307ACBD92C9034B0006E8152 /* Mainview.swift in Sources */,
 				30155FE12C91813F00EBE0AD /* CountCheklist.swift in Sources */,
 				301560072C921A3700EBE0AD /* SettingViewModel.swift in Sources */,
 				30155FE82C9182D200EBE0AD /* Party.xcdatamodeld in Sources */,
+				301560232C92C95E00EBE0AD /* SpinRotationView.swift in Sources */,
 				301560162C9227AD00EBE0AD /* SoundManager.swift in Sources */,
 				30155FF22C918B5400EBE0AD /* CheckListView.swift in Sources */,
 				301560092C921CCA00EBE0AD /* SliderButtomSetting.swift in Sources */,
+				3015601F2C92C36F00EBE0AD /* SpinFortune.swift in Sources */,
+				301560212C92C56A00EBE0AD /* Enums.swift in Sources */,
 				307ACBE02C904596006E8152 /* PageIntroModel.swift in Sources */,
 				307ACBC82C901AA4006E8152 /* LoadingView.swift in Sources */,
+				301560252C93169E00EBE0AD /* CreateSpinView.swift in Sources */,
+				301560272C93451300EBE0AD /* PageSpinView.swift in Sources */,
 				30155FF82C91AE0000EBE0AD /* BackForButton.swift in Sources */,
 				309C47932C90DA0300438AC1 /* ButtonMenuView.swift in Sources */,
 				307ACBDF2C904596006E8152 /* IntroView.swift in Sources */,
+				301560292C93615900EBE0AD /* EditSpinView.swift in Sources */,
 				30155FF62C9193CB00EBE0AD /* NewTaskCellView.swift in Sources */,
 				301560032C9212CE00EBE0AD /* WebViewPage.swift in Sources */,
 				30155FFC2C91DB6E00EBE0AD /* EditCheckListView.swift in Sources */,
 				30155FDF2C917A3000EBE0AD /* backForText.swift in Sources */,
 				309C47962C90E54400438AC1 /* CheckListsView.swift in Sources */,
+				301560192C92BF6200EBE0AD /* SpinView.swift in Sources */,
 				301560022C9212CE00EBE0AD /* webView.swift in Sources */,
 				309C47912C90D76D00438AC1 /* ButtonPressAction.swift in Sources */,
 				30155FE42C91827000EBE0AD /* CheckListViewModel.swift in Sources */,
+				3015602B2C9366E700EBE0AD /* StartSpinView.swift in Sources */,
 				30155FF02C91899A00EBE0AD /* CheckListCell.swift in Sources */,
 				307ACBDE2C904596006E8152 /* PageIntroView.swift in Sources */,
 				30155FF42C918C2E00EBE0AD /* AddCheckListView.swift in Sources */,
 				30155FED2C91847500EBE0AD /* CoreDataManager.swift in Sources */,
+				3015601D2C92C24200EBE0AD /* UIImageTransformer.swift in Sources */,
 				307ACBC62C901AA4006E8152 /* Crazy_Time_Party_ChecklistApp.swift in Sources */,
 				30155FFA2C91B4CE00EBE0AD /* TaskCellView.swift in Sources */,
 				30155FFF2C920E7800EBE0AD /* SettingsView.swift in Sources */,

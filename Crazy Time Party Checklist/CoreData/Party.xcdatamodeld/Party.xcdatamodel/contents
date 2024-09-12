@@ -4,9 +4,19 @@
         <attribute name="nameList" optional="YES" attributeType="String"/>
         <relationship name="task" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="cheklist" inverseEntity="Task"/>
     </entity>
+    <entity name="SpinFortune" representedClassName="SpinFortune" syncable="YES">
+        <attribute name="backGround" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>
+        <attribute name="color" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>
+        <attribute name="nameGame" optional="YES" attributeType="String"/>
+        <attribute name="spin" optional="YES" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>
+        <attribute name="tag" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="wheelColor" attributeType="Transformable" valueTransformerName="UIImageTransformer" customClassName="UIImage"/>
+        <relationship name="task" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="spinFortune" inverseEntity="Task"/>
+    </entity>
     <entity name="Task" representedClassName="Task" syncable="YES" codeGenerationType="class">
         <attribute name="compltd" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="textTask" optional="YES" attributeType="String"/>
         <relationship name="cheklist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CheckList" inverseName="task" inverseEntity="CheckList"/>
+        <relationship name="spinFortune" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SpinFortune" inverseName="task" inverseEntity="SpinFortune"/>
     </entity>
 </model>

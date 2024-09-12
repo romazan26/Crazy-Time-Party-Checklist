@@ -7,13 +7,18 @@
 
 import Foundation
 import SwiftUI
-import MediaPlayer
+
 
 final class SettingViewModel: ObservableObject{
     
     let sound = SoundManager.instance
+    let music = MusicManager.instance
     
-    @Published var musicSlider: Double = 0
+    @Published var musicSlider: Double = 1 {
+        didSet{
+            music.player?.volume = Float(musicSlider)
+        }
+    }
     @Published var wheelSlider: Double = 0
     @Published var soundsSlider: Double = 1 {
         didSet {
@@ -21,13 +26,4 @@ final class SettingViewModel: ObservableObject{
         }
     }
 }
-extension MPVolumeView {
-    static func setVolume(_ volume: Float) -> Void {
-        let volumeView = MPVolumeView()
-        let slider = volumeView.subviews.first(where: { $0 is UISlider }) as? UISlider
 
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
-            slider?.value = volume
-        }
-    }
-}

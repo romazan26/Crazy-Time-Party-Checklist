@@ -69,9 +69,7 @@ struct IntroView: View {
                     .ignoresSafeArea()
             }
     }
-    func incrementPage() {
-        pageIndex += 1
-    }
+ 
     func countUniqueElements(_ array: [Int]) -> Int {
         var uniqueElements = Set<Int>()
         

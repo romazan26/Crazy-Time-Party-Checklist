@@ -33,28 +33,32 @@ struct Mainview: View {
                             
                             //MARK: Spin button
                             NavigationLink {
-                                Text("spin")
+                                SpinView()
                             } label: {
                                 CustomButtonView(image: .button1, text: "SPIN THE WHEEL")
                             }
 
                             //MARK: Checklist button
                             NavigationLink {
-                                CheckListsView()
+                                CheckListsView().onAppear(perform: {
+                                    SoundManager.instance.playSound(sound: .button)
+                                })
                             } label: {
                                 CustomButtonView(image: .button2, text: "CHECKLISTS")
                             }
                             
                             //MARK: Training button
                             NavigationLink {
-                                Text("Trai")
+                                IntroView()
                             } label: {
                                 CustomButtonView(image: .button3, text: "TRAINING")
                             }
 
                             //MARK: Setting button
                             NavigationLink {
-                                SettingsView()
+                                SettingsView().onAppear(perform: {
+                                    SoundManager.instance.playSound(sound: .button)
+                                })
                             } label: {
                                 Image(.setting)
                                     .resizable()
