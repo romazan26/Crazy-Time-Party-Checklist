@@ -29,6 +29,19 @@ final class CheckListViewModel: ObservableObject{
         getCheckLists()
     }
     
+    //MARK: - share function
+    func shareTasks(checkList: CheckList) -> String{
+        var sharetext = ""
+        if let tasks = checkList.task?.allObjects as? [Task]{
+            for task in tasks {
+                sharetext.append(" \(task.textTask ?? "")")
+            }
+        }else {
+            sharetext = "no tasks for checkList"
+        }
+        return sharetext
+    }
+    
     //MARK: - Fill data checklist
     func fillData(checkList: CheckList){
         simpleCheckListName = checkList.nameList ?? ""

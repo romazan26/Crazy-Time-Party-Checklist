@@ -12,6 +12,7 @@ struct CheckListView: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var vm: CheckListViewModel
     @State private var isPresentAlert = false
+    @State private var isPresentShare = false
     var body: some View {
         ZStack {
             Image(.checkListBackGround)
@@ -44,9 +45,16 @@ struct CheckListView: View {
                     }
 
                     //MARK: Share button
-                    Image(.shareButton)
-                        .resizable()
-                        .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
+                    Button {
+                        isPresentShare.toggle()
+                        SoundManager.instance.playSound(sound: .button)
+                    } label: {
+                        Image(.shareButton)
+                            .resizable()
+                            .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
+                    }
+
+                    
                     //MARK: List button
                     Button(action: {
                         dismiss()
@@ -120,8 +128,12 @@ struct CheckListView: View {
                 }),
                       secondaryButton: .cancel())
             })
+            //MARK: - Sheets
             .sheet(isPresented: $vm.isPresentEditCheckList, content: {
                 EditCheckListView(vm: vm, checkList: checkList)
+            })
+            .sheet(isPresented: $isPresentShare, content: {
+                ShareSheet(items: vm.shareTasks(checkList: checkList) )
             })
             .padding()
             .navigationBarBackButtonHidden()
