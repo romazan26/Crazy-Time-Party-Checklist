@@ -16,7 +16,7 @@ struct StartSpinView: View {
     var body: some View {
         ZStack {
             //MARK: - Background
-            Image(uiImage: vm.simpleBackGround)
+            Image(uiImage: spin.backGround ?? UIImage(resource: .noSpinBack))
                 .resizable()
                 .ignoresSafeArea()
             VStack {
@@ -41,31 +41,38 @@ struct StartSpinView: View {
                             .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
                     }
                     //MARK: Menu button
-                    NavigationLink {
-                        Mainview()
+                    Button {
+                        dismiss()
                     } label: {
                         Image(.list)
                             .resizable()
                             .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
                     }
+//                    NavigationLink {
+//                        Mainview()
+//                    } label: {
+//                        Image(.list)
+//                            .resizable()
+//                            .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
+//                    }
                 }
                 
                 //MARK: - Name game and Task
                 VStack{
-                    Text("Name game")
+                    Text(spin.nameGame ?? "Name game")
                         .foregroundStyle(.white)
                         .font(.system(size: 24, weight: .heavy))
-                    Text("2. Make a crooked face at the camera")
+                    Text("\(vm.wheelWinNumber). \(vm.simpleTaskText)")
                         .foregroundStyle(.white)
                         .font(.system(size: 16, weight: .heavy))
                         .multilineTextAlignment(.center)
-                        .padding()
+                        .padding(8)
                         .background {
                             Color.backFortaask.cornerRadius(8)
                         }
-                        .padding(5)
+                        .padding(8)
                 }
-                .padding()
+                .padding(8)
                 .background {
                     backForText(width: 324, height: .infinity)
                 }
@@ -74,11 +81,13 @@ struct StartSpinView: View {
                 
                 //MARK: - Spin of Fartune
                 SpinRotationView(degrees: vm.simpleDegrees,
-                                 wheel: UIImage(resource: .wheel1),
-                                 spin: .spin1)
+                                 wheel: spin.wheelColor ?? UIImage(resource: .wheel1),
+                                 spin: spin.spin ?? UIImage(resource: .spin1))
                 
+                //MARK: - Start spin button
                 Button {
-                    vm.spining()                    
+                    vm.spining() 
+                    vm.getTaskAfterSpin(spin: spin)
                 } label: {
                     BackForButton(text: "SPIN THE WHEEL")
                 }
@@ -89,6 +98,6 @@ struct StartSpinView: View {
     }
 }
 
-#Preview {
-    StartSpinView( vm: SpinViewModel(), spin: SpinFortune())
-}
+//#Preview {
+//    StartSpinView( vm: SpinViewModel(), spin: SpinFortune())
+//}

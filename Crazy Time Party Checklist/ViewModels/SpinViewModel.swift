@@ -12,6 +12,9 @@ import SwiftUI
 
 
 final class SpinViewModel: ObservableObject{
+    
+    @AppStorage("isFirstSpin") var isFirstSpin: Bool?
+    
     let manager = CoreDataManager.instance
     
     @Published var spinsFortune: [SpinFortune] = []
@@ -31,10 +34,15 @@ final class SpinViewModel: ObservableObject{
     @Published var countTask = 0
     
     @Published var simpleDegrees: Double = 0
+    @Published var wheelWinNumber = 1
     
     init(){
         getSpins()
         getTasks()
+        if isFirstSpin ?? true {
+            addPreviewData(game: "Fun tasks", tasks: [" Tell a funny joke!","Make a crooked face at the camera.", "Sing the first lines of a famous", "Read the tongue twister.","Draw an animal while the others guess.","Come up with a new slogan for the party.","Shout Cake! to the whole room.","Make spiders on each something that you find.","Persuade your neighbor to do something unimaginable.","Come up with and show a new dance (at least 15 seconds)."])
+            isFirstSpin = false
+        }
     }
     
     //MARK: - Spining wheel
@@ -47,6 +55,47 @@ final class SpinViewModel: ObservableObject{
         }else {
             simpleDegrees = Double.random(in: 360...720)
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: DispatchWorkItem(block: { [self] in
+            getWheelWinNumber()
+        }))
+    }
+    
+    func getWheelWinNumber(){
+        let position = simpleDegrees - 360
+        switch position {
+        case 325...346 :  wheelWinNumber = 2
+        case 12...34 :   wheelWinNumber = 16
+        case 34...56 :  wheelWinNumber = 15
+        case 56...79 :  wheelWinNumber = 14
+        case 79...103 :  wheelWinNumber = 13
+        case 103...125 :  wheelWinNumber = 12
+        case 125...149 :  wheelWinNumber = 11
+        case 149...169 :  wheelWinNumber = 10
+        case 169...192 :   wheelWinNumber = 9
+        case 192...213 :  wheelWinNumber = 8
+        case 213...236 :  wheelWinNumber = 7
+        case 236...259 :  wheelWinNumber = 6
+        case 259...280 :  wheelWinNumber = 5
+        case 280...302 :  wheelWinNumber = 4
+        case 302...325 :  wheelWinNumber = 3
+        default:
+            wheelWinNumber = 1
+        }
+    }
+    
+    
+    func getTaskAfterSpin(spin: SpinFortune){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.5, execute: DispatchWorkItem(block: { [self] in
+            if let tasks = spin.task?.allObjects as? [Task]{
+                if wheelWinNumber <= tasks.count{
+                    simpleTaskText = tasks[wheelWinNumber].textTask ?? ""
+                }else {
+                    simpleTaskText = tasks.randomElement()?.textTask ?? ""
+                }
+            }
+        }))
+        
+        
     }
     
     //MARK: - Fill data checklist
@@ -111,7 +160,7 @@ final class SpinViewModel: ObservableObject{
         newSpin.wheelColor = UIImage(resource: simpleColor.Wheel)
         newSpin.spin = UIImage(resource: simpleColor.spin)
         newSpin.color = UIImage(resource: simpleColor.spinColor)
-        newSpin.tag = Int16(spinsFortune.count + 1)
+
         
         for simpleTask in simpleTasks {
             addOneTask(task: simpleTask, spin: newSpin)
@@ -126,6 +175,22 @@ final class SpinViewModel: ObservableObject{
         newtask.compltd = false
         newtask.spinFortune = spin
         saveTask()
+    }
+    
+    func addPreviewData(game: String, tasks: [String]){
+        let newSpin = SpinFortune(context: manager.context)
+        newSpin.backGround = simpleBackGround
+        newSpin.nameGame = game
+        newSpin.wheelColor = UIImage(resource: simpleColor.Wheel)
+        newSpin.spin = UIImage(resource: simpleColor.spin)
+        newSpin.color = UIImage(resource: simpleColor.spinColor)
+        
+        for task in tasks {
+            addOneTask(task: task, spin: newSpin)
+        }
+        saveSpin()
+        clear()
+        
     }
     
     //MARK: - Get data

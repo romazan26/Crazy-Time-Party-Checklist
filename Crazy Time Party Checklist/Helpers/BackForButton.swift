@@ -14,17 +14,15 @@ struct BackForButton: View {
         ZStack {
             Image(.backForButton)
                 .resizable()
-                .cornerRadius(24)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 24)
-                        .stroke(.white, lineWidth: 2.0)
-                }
-                .frame( height: scaleScreen_y(height) )
-            .frame(maxWidth: .infinity)
+                
             Text(text)
                 .foregroundStyle(.white)
                 .font(.system(size: 24, weight: .heavy))
         }
+            .frame( height: scaleScreen_y(height) )
+            .frame(width: scaleScreen_y(152))
+
+            
     }
 }
 

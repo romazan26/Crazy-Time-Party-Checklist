@@ -60,9 +60,10 @@ struct SpinView: View {
                     
                     //MARK: - Spin
                     
+                    Spacer()
                     Image(.noSpinGame)
                         .resizable()
-                        .frame(width: scaleScreen_x(368), height: 417)
+                        .frame(width: scaleScreen_y(368), height: scaleScreen_y(417))
                         .onAppear(perform: {
                             vm.simpleBackGround = .noSpinBack
                         })
