@@ -53,8 +53,12 @@ struct IntroView: View {
                     Button(action: {
                         pageIndex += 1
                         if pageIndex > pages.count - 1 {
-                            isPresented = true
-                            isFirstStart = false
+                            if isFirstStart ?? true{
+                                isPresented = true
+                                isFirstStart = false
+                            }else{
+                                dismiss()
+                            }
                         }
                     }, label: {
                         Image(.nextButton)
@@ -63,6 +67,7 @@ struct IntroView: View {
                     })
                     .offset(y: scaleScreen_y(35))
                 }
+            .navigationBarBackButtonHidden()
             .background {
                 Image(.onboardingBackGroud)
                     .resizable()

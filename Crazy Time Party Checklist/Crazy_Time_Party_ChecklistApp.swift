@@ -15,3 +15,7 @@ struct Crazy_Time_Party_ChecklistApp: App {
         }
     }
 }
+
+//Bundle ID: com.seb.b0n4nz4p4rtych3ckl1st
+//Аккаунт: jabbarhagie@gmail.com
+//Пароль: 1%D}/g2xR~xd:Hf

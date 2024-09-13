@@ -67,16 +67,17 @@ struct StartSpinView: View {
                         .foregroundStyle(.white)
                         .font(.system(size: 24, weight: .heavy))
                     Text("\(vm.wheelWinNumber). \(vm.simpleTaskText)")
+                        .fixedSize(horizontal: false, vertical: true)
                         .foregroundStyle(.white)
-                        .font(.system(size: 16, weight: .heavy))
+                        .font(.system(size: 20, weight: .heavy))
                         .multilineTextAlignment(.center)
                         .padding(8)
                         .background {
                             Color.backFortaask.cornerRadius(8)
                         }
-                        .padding(8)
+                        .padding(.horizontal)
                 }
-                .padding(8)
+                .padding()
                 .background {
                     backForText(width: 324, height: .infinity)
                 }
