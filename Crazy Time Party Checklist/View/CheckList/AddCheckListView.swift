@@ -79,6 +79,7 @@ struct AddCheckListView: View {
                 Button(action: {
                     vm.addCheckList()
                     vm.isPresentAddCheckList.toggle()
+                    SoundManager.instance.playSound(sound: .button)
                 }, label: {
                     Text("Save")
                         .foregroundStyle(.white)

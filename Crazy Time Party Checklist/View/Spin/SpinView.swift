@@ -33,7 +33,9 @@ struct SpinView: View {
                     
                     //MARK: Setting button
                     NavigationLink {
-                        SettingsView()
+                        SettingsView().onAppear(perform: {
+                            SoundManager.instance.playSound(sound: .button)
+                        })
                     } label: {
                         Image(.setting)
                             .resizable()
@@ -42,6 +44,7 @@ struct SpinView: View {
                     //MARK: Menu button
                     Button {
                         dismiss()
+                        SoundManager.instance.playSound(sound: .button)
                     } label: {
                         Image(.list)
                             .resizable()
@@ -70,7 +73,10 @@ struct SpinView: View {
                     //MARK: Navigation back button
                     if !vm.spinsFortune.isEmpty{
                         HStack{
-                            Button {vm.pageIndex -= 1} label: {
+                            Button {
+                                vm.pageIndex -= 1
+                                SoundManager.instance.playSound(sound: .button)
+                            } label: {
                                 Image(.buttonLeft)
                                     .resizable()
                             }
@@ -85,6 +91,7 @@ struct SpinView: View {
                     //MARK: - Create button
                     Button {
                         vm.isPresentCreate.toggle()
+                        SoundManager.instance.playSound(sound: .button)
                     } label: {
                         BackForButton(text: "CREATE A GAME")
                     }
@@ -116,6 +123,7 @@ struct SpinView: View {
                             if vm.pageIndex > 0{
                                 Button {
                                     vm.pageIndex -= 1
+                                    SoundManager.instance.playSound(sound: .button)
                                 } label: {
                                     Image(.buttonLeft)
                                         .resizable()
@@ -126,7 +134,7 @@ struct SpinView: View {
                             if vm.spinsFortune.count > vm.pageIndex {
                                 Button {
                                     vm.pageIndex += 1
-                                    print(vm.spinsFortune)
+                                    SoundManager.instance.playSound(sound: .button)
                                     
                                 } label: {
                                     Image(.buttonRight)
@@ -139,13 +147,19 @@ struct SpinView: View {
                         
                         //MARK: - buttons
                         HStack {
+                            //MARK: Edit button
                             Button {
                                 vm.isPresentEdit.toggle()
+                                SoundManager.instance.playSound(sound: .button)
                             } label: {
                                 BackForButton(text: "EDIT")
                             }
+                            //MARK: - Start button
                             NavigationLink {
                                 StartSpinView( vm: vm, spin: vm.spinsFortune[vm.pageIndex])
+                                    .onAppear(perform: {
+                                        SoundManager.instance.playSound(sound: .button)
+                                    })
                             } label: {
                                 BackForButton(text: "START")
                             }

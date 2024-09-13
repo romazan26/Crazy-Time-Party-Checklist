@@ -30,12 +30,21 @@ struct CheckListsView: View {
                     Spacer()
                     
                     //MARK: Setting button
-                    Image(.setting)
-                        .resizable()
-                        .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
+                    NavigationLink {
+                        SettingsView().onAppear(perform: {
+                            SoundManager.instance.playSound(sound: .button)
+                        })
+                    } label: {
+                        Image(.setting)
+                            .resizable()
+                            .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
+                    }
+
+                    
                     //MARK: Menu button
                     Button {
                         dismiss()
+                        SoundManager.instance.playSound(sound: .button)
                     } label: {
                         Image(.list)
                             .resizable()
@@ -56,6 +65,9 @@ struct CheckListsView: View {
                         ForEach(vm.checkLists) { checkList in
                             NavigationLink {
                                 CheckListView(checkList: checkList, vm: vm)
+                                    .onAppear(perform: {
+                                        SoundManager.instance.playSound(sound: .button)
+                                    })
                             } label: {
                                 CheckListCell(checkList: checkList)
                             }
@@ -67,6 +79,7 @@ struct CheckListsView: View {
                 //MARK: - Add buttom
                 Button {
                     vm.isPresentAddCheckList.toggle()
+                    SoundManager.instance.playSound(sound: .button)
                 } label: {
                     ZStack{
                         backForText(width: 320, height: 68)

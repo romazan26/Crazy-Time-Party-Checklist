@@ -7,6 +7,7 @@
 
 import Foundation
 import AVKit
+import SwiftUI
 
 enum SoundOption: String{
     case backMenu
@@ -17,6 +18,9 @@ enum SoundOption: String{
 }
 
 final class SoundManager {
+    @AppStorage("volumeSound") var volumeSound: String?
+    
+    
     static let instance = SoundManager()
     
     var player: AVAudioPlayer?
@@ -27,6 +31,7 @@ final class SoundManager {
         do {
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
+            player?.volume = Float(volumeSound ?? "0") ?? 1
         }catch let error{
             print("Error playing sound: \(error.localizedDescription)")
         }
@@ -34,6 +39,8 @@ final class SoundManager {
 }
 
 final class MusicManager {
+    @AppStorage("volumeMusic") var volumeMusic: String?
+    
     static let instance = MusicManager()
     
     var player: AVAudioPlayer?
@@ -44,6 +51,7 @@ final class MusicManager {
         do {
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
+            player?.volume = Float(volumeMusic ?? "0") ?? 1
         }catch let error{
             print("Error playing sound: \(error.localizedDescription)")
         }

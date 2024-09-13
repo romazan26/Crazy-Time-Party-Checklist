@@ -21,7 +21,10 @@ struct CheckListView: View {
                 //MARK: - Top tool bar
                 HStack {
                     //MARK: Back button
-                    Button(action: {dismiss()}, label: {
+                    Button(action: {
+                        dismiss()
+                        SoundManager.instance.playSound(sound: .button)
+                    }, label: {
                         Image(.backButton)
                             .resizable()
                             .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
@@ -30,17 +33,29 @@ struct CheckListView: View {
                     Spacer()
                     
                     //MARK: Setting button
-                    Image(.setting)
-                        .resizable()
-                        .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
+                    NavigationLink {
+                        SettingsView().onAppear(perform: {
+                            SoundManager.instance.playSound(sound: .button)
+                        })
+                    } label: {
+                        Image(.setting)
+                            .resizable()
+                            .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
+                    }
+
                     //MARK: Share button
                     Image(.shareButton)
                         .resizable()
                         .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
                     //MARK: List button
-                    Image(.list)
-                        .resizable()
-                        .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
+                    Button(action: {
+                        dismiss()
+                        SoundManager.instance.playSound(sound: .button)
+                    }, label: {
+                        Image(.list)
+                            .resizable()
+                            .frame(width: scaleScreen_x(56), height: scaleScreen_y(56))
+                    })
                 }
                 //MARK: Title view
                 ZStack {
@@ -83,12 +98,14 @@ struct CheckListView: View {
                     //MARK: Delete button
                     Button {
                         isPresentAlert.toggle()
+                        SoundManager.instance.playSound(sound: .button)
                     } label: {
                         BackForButton(text: "DELETE")
                     }
                     //MARK: Edit button
                     Button {
                         vm.isPresentEditCheckList.toggle()
+                        SoundManager.instance.playSound(sound: .button)
                     } label: {
                         BackForButton(text: "EDIT")
                     }

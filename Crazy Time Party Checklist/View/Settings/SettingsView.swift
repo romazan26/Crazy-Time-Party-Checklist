@@ -72,7 +72,6 @@ struct SettingsView: View {
                         //Slider buttons
                         VStack(spacing: 20){
                             SliderButtomSetting(text: "MUSIC", value: $vm.musicSlider)
-                            SliderButtomSetting(text: "WHEEL", value: $vm.wheelSlider)
                             SliderButtomSetting(text: "SOUNDS", value: $vm.soundsSlider)
                         }
                         
@@ -82,7 +81,9 @@ struct SettingsView: View {
                 }
                 
                 Button(action: {
+                    vm.save()
                     dismiss()
+                    SoundManager.instance.playSound(sound: .button)
                     
                 }, label: {
                     BackForButton(text: "SAVE")
@@ -97,7 +98,7 @@ struct SettingsView: View {
                 ShareSheet(items: urlShare )
             })
             .sheet(isPresented: $isPresentPolicy, content: {
-                WebViewPage(urlString: URL(string: "https://google.com")!)
+                WebViewPage(urlString: URL(string: "https://www.termsfeed.com/live/f7e5013a-ba3d-4e6c-abab-9b58d957f382")!)
             })
         }
     }

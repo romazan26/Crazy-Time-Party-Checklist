@@ -33,6 +33,7 @@ struct ButtonMenuView: View {
             withAnimation {
                 image = firstImage
             }
+            SoundManager.instance.playSound(sound: .button)
             action()
         }
 

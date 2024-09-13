@@ -20,7 +20,7 @@ struct BackForButton: View {
                 .font(.system(size: 24, weight: .heavy))
         }
             .frame( height: scaleScreen_y(height) )
-            .frame(width: scaleScreen_y(152))
+            .frame(width: scaleScreen_y(.infinity))
 
             
     }

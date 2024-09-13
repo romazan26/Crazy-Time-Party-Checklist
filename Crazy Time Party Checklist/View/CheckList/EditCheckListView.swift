@@ -82,6 +82,7 @@ struct EditCheckListView: View {
                 HStack {
                     Button(action: {
                         isPresentAlert.toggle()
+                        SoundManager.instance.playSound(sound: .button)
                     }, label: {
                         Text("Delete")
                             .foregroundStyle(.white)
@@ -96,6 +97,7 @@ struct EditCheckListView: View {
                     Button(action: {
                         vm.editCheckList(checkList: checkList)
                         vm.isPresentEditCheckList.toggle()
+                        SoundManager.instance.playSound(sound: .button)
                     }, label: {
                         Text("Save")
                             .foregroundStyle(.white)

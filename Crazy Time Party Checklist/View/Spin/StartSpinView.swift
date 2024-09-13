@@ -25,6 +25,7 @@ struct StartSpinView: View {
                     //MARK: Back button
                     Button {
                         dismiss()
+                        SoundManager.instance.playSound(sound: .button)
                     } label: {
                         Image(.backButton)
                             .resizable()
@@ -34,7 +35,9 @@ struct StartSpinView: View {
                     
                     //MARK: Setting button
                     NavigationLink {
-                        SettingsView()
+                        SettingsView().onAppear(perform: {
+                            SoundManager.instance.playSound(sound: .button)
+                        })
                     } label: {
                         Image(.setting)
                             .resizable()
@@ -43,6 +46,7 @@ struct StartSpinView: View {
                     //MARK: Menu button
                     Button {
                         dismiss()
+                        SoundManager.instance.playSound(sound: .button)
                     } label: {
                         Image(.list)
                             .resizable()
@@ -88,6 +92,7 @@ struct StartSpinView: View {
                 Button {
                     vm.spining() 
                     vm.getTaskAfterSpin(spin: spin)
+                    SoundManager.instance.playSound(sound: .spin)
                 } label: {
                     BackForButton(text: "SPIN THE WHEEL")
                 }
@@ -95,6 +100,12 @@ struct StartSpinView: View {
             .padding()
             .navigationBarBackButtonHidden()
         }
+        .onAppear(perform: {
+            MusicManager.instance.playSound(sound: .backSpin)
+        })
+        .onDisappear(perform: {
+            MusicManager.instance.playSound(sound: .backMenu)
+        })
     }
 }
 

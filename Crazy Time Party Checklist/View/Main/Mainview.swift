@@ -23,7 +23,7 @@ struct Mainview: View {
                     
                     //MARK: - Groupe of butons
                     ZStack{
-                        //Button background
+                        //Buttons group background
                         Image(.backGroundForButton)
                             .resizable()
                             .frame(width: scaleScreen_x(324), height: scaleScreen_y(362))
@@ -33,7 +33,9 @@ struct Mainview: View {
                             
                             //MARK: Spin button
                             NavigationLink {
-                                SpinView()
+                                SpinView().onAppear(perform: {
+                                    SoundManager.instance.playSound(sound: .button)
+                                })
                             } label: {
                                 CustomButtonView(image: .button1, text: "SPIN THE WHEEL")
                             }
@@ -49,7 +51,9 @@ struct Mainview: View {
                             
                             //MARK: Training button
                             NavigationLink {
-                                IntroView()
+                                IntroView().onAppear(perform: {
+                                    SoundManager.instance.playSound(sound: .button)
+                                })
                             } label: {
                                 CustomButtonView(image: .button3, text: "TRAINING")
                             }
@@ -71,6 +75,9 @@ struct Mainview: View {
                 }
                 
             }
+            .onAppear(perform: {
+                MusicManager.instance.playSound(sound: .backMenu)
+            })
         }
     }
 }

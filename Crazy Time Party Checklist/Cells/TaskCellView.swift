@@ -12,7 +12,10 @@ struct TaskCellView: View {
     @ObservedObject var vm: CheckListViewModel
     var body: some View {
         HStack {
-            Button(action: {vm.comletedTask(task: task)}, label: {
+            Button(action: {
+                vm.comletedTask(task: task)
+                SoundManager.instance.playSound(sound: .task)
+            }, label: {
                 if task.compltd{
                     Image(systemName: "checkmark.circle.fill")
                         .resizable()
@@ -26,6 +29,7 @@ struct TaskCellView: View {
                         .foregroundStyle(.pinkbutton)
                         .padding(.horizontal)
                 }
+                
         
             })
             

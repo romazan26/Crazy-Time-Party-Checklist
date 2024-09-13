@@ -41,6 +41,14 @@ final class SpinViewModel: ObservableObject{
         getTasks()
         if isFirstSpin ?? true {
             addPreviewData(game: "Fun tasks", tasks: [" Tell a funny joke!","Make a crooked face at the camera.", "Sing the first lines of a famous", "Read the tongue twister.","Draw an animal while the others guess.","Come up with a new slogan for the party.","Shout Cake! to the whole room.","Make spiders on each something that you find.","Persuade your neighbor to do something unimaginable.","Come up with and show a new dance (at least 15 seconds)."])
+            
+            addPreviewData(game: "Music", tasks: ["Dance for 30 seconds to your favorite song.","Portray a famous musician without words.","Sing a refrain from a popular song.","Conduct a mini-caravan (unite all participants in a circle and go ahead!).","Find a song that makes you nostalgic and tell us about it.","Demonstrate your vocal abilities (playing to a soundtrack).","Try to guess the song in parts (one player sings, others guess).","Make a song battle between two teams.","Come up with a new original song based on a random word.","Distort a classic song through modern rap."])
+                
+            addPreviewData(game: "Games and contests", tasks: ["Play the game 20 questions","Suggest an idea for a new party.","Complete the task from the card that someone else will pull out.","Organize an impromptu competition for the best dance.","Create a funny rule for the party (for example, everyone should only speak in rhymes)","Have a friendly chat about who can pretend better.","Play fright — whoever fakes the shock has lost.","Arrange a relay race, in which the partners organize for 30 seconds.","Come up with a new way to transmit a secret message","10. Ask questions about the party and choose a host today."])
+            
+            addPreviewData(game: "Creative tasks", tasks: ["Draw something on paper or in the air.","Create a short funny story on the spot.","Make origami from improvised materials.","Come up with a new logo for the party.","Simulate a famous painting or movie.","Write a poem about the party in 1 minute.","Create a mask from improvised materials.","Make a short video review of the party.","Frame the group's wish board (ask everyone to write down their wishes).","Create a collage of happiness from old magazines."])
+                           
+            addPreviewData(game: " Cooking tasks", tasks: ["Prepare a snack using only 3 ingredients.","Try to guess the ingredients in the dish blindly.","Make an exhibition of your favorite dishes.","Conduct a mini-tasting of monotonous drinks and rank them.","Set yourself the task of trying an exotic fruit.","Prepare an unusual combination of products (for example, bread with jam).","Create the perfect cocktail on the spot.","Come up with a name for your dish and tell us about it.","Set up a competition for the best snack and give points.","Draw your favorite dessert on paper."])
             isFirstSpin = false
         }
     }
@@ -87,11 +95,12 @@ final class SpinViewModel: ObservableObject{
     func getTaskAfterSpin(spin: SpinFortune){
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.5, execute: DispatchWorkItem(block: { [self] in
             if let tasks = spin.task?.allObjects as? [Task]{
-                if wheelWinNumber <= tasks.count{
-                    simpleTaskText = tasks[wheelWinNumber].textTask ?? ""
-                }else {
-                    simpleTaskText = tasks.randomElement()?.textTask ?? ""
-                }
+//                if wheelWinNumber <= tasks.count{
+//                    simpleTaskText = tasks[wheelWinNumber - 1].textTask ?? ""
+//                }else {
+//                    simpleTaskText = tasks.randomElement()?.textTask ?? ""
+//                }
+                simpleTaskText = tasks.randomElement()?.textTask ?? ""
             }
         }))
         
